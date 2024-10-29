@@ -9,7 +9,7 @@ Deskripsi       :Membuat program untuk sorting dan searching string dengan berba
 #include <iostream>
 using namespace std;
 
-typedef int larik[100];
+typedef string larik[250];
 
 void playGame(bool& playMenu, char input) {
     cout << "Exit? (y/n) : ";
@@ -312,92 +312,112 @@ void descendShell(larik& a, int jumlah){
     cout << endl;
 }
 
-void menuUtama(int& pilihanSorting, int& pilihMetode, larik& data, int &jumlah, bool playMenu, char start){
+void menuUtama(int& pilihMenu,int& pilihanSorting, int& pilihMetode, larik& data, int &jumlah, bool playMenu, char start){
     while(playMenu) {
         cout << "+---------------------------------------+\n";
         cout << "|                 MENU                  |\n";
         cout << "+---------------------------------------+\n";
-        cout << "| 1. Bubble sort tipe-1                 |\n";
-        cout << "| 2. Bubble sort tipe-2                 |\n";
-        cout << "| 3. Bubble sort tipe-3                 |\n";
-        cout << "| 4. Selection sort                     |\n";
-        cout << "| 5. Insertion sort                     |\n";
-        cout << "| 6. Shell sort                         |\n";
+        cout << "| 1. Sorting                            |\n";
+        cout << "| 2. Searching                          |\n";
         cout << "+---------------------------------------+\n";
-        cout << "Masukkan pilihan anda (1, 2, 3, 4, 5, 6): "; cin >> pilihanSorting;
-        cout << "+--------------+\n";
-        cout << "| Pilih metode |\n";
-        cout << "+--------------+\n";
-        cout << "|1. Ascending  |\n";
-        cout << "|2. Descending |\n";
-        cout << "+--------------+\n";
-        cout << "Pilihan (1 / 2): ";cin >> pilihMetode;
-        cout << "Input banyak data : "; cin >> jumlah;
-        cout << "Input data : " << endl;
-        inputLarik(data, jumlah);
-        switch (pilihanSorting)
+        cout << "Pilihan (1 / 2): "; cin >> pilihMenu;
+        switch (pilihMenu)
         {
         case 1:
-            if (pilihMetode == 1){
-                ascendBubble_1(data, jumlah);
-            } else if (pilihMetode == 2){
-                descendBubble_1(data, jumlah);
+            cout << "+---------------------------------------+\n";
+            cout << "|                 MENU                  |\n";
+            cout << "+---------------------------------------+\n";
+            cout << "| 1. Bubble sort tipe-1                 |\n";
+            cout << "| 2. Bubble sort tipe-2                 |\n";
+            cout << "| 3. Bubble sort tipe-3                 |\n";
+            cout << "| 4. Selection sort                     |\n";
+            cout << "| 5. Insertion sort                     |\n";
+            cout << "| 6. Shell sort                         |\n";
+            cout << "+---------------------------------------+\n";
+            cout << "Masukkan pilihan anda (1, 2, 3, 4, 5, 6): "; cin >> pilihanSorting;
+            cout << "+--------------+\n";
+            cout << "| Pilih metode |\n";
+            cout << "+--------------+\n";
+            cout << "|1. Ascending  |\n";
+            cout << "|2. Descending |\n";
+            cout << "+--------------+\n";
+            cout << "Pilihan (1 / 2): ";cin >> pilihMetode;
+            cout << "Input banyak data : "; cin >> jumlah;
+            cout << "Input data : " << endl;
+            inputLarik(data, jumlah);
+            switch (pilihanSorting)
+            {
+                case 1:
+                    if (pilihMetode == 1){
+                        ascendBubble_1(data, jumlah);
+                    } else if (pilihMetode == 2){
+                        descendBubble_1(data, jumlah);
 
-            } else {cout << "Metode tidak tersedia"; break;}
-            playGame(playMenu, start);
-            
+                    } else {cout << "Metode tidak tersedia"; break;}
+                    playGame(playMenu, start);
+                    
+                    break;
+                case 2:
+                    if (pilihMetode == 1){
+                        ascendBubble_2(data, jumlah);
+                    } else if (pilihMetode == 2){
+                        descendBubble_2(data, jumlah);
+
+                    } else {cout << "Metode tidak tersedia"; break;}
+                    playGame(playMenu, start);
+                    
+                    break;
+                case 3:
+                    if (pilihMetode == 1){
+                        ascendBubble_3(data, jumlah);
+                    } else if (pilihMetode == 2){
+                        descendBubble_3(data, jumlah);
+
+                    } else {cout << "Metode tidak tersedia"; break;}
+                    playGame(playMenu, start);
+                    
+                    break;
+                case 4:
+                    if (pilihMetode == 1){
+                        ascendSelect(data, jumlah);
+                    } else if (pilihMetode == 2){
+                        descendSelect(data, jumlah);
+
+                    } else {cout << "Metode tidak tersedia"; break;}
+                    playGame(playMenu, start);
+                    
+                    break;
+                case 5:
+                    if (pilihMetode == 1){
+                        ascendInsert(data, jumlah);
+                    } else if (pilihMetode == 2){
+                        descendInsert(data, jumlah);
+
+                    } else {cout << "Metode tidak tersedia"; break;}
+                    playGame(playMenu, start);
+                    
+                    break;
+                case 6:
+                    if (pilihMetode == 1){
+                        ascendShell(data, jumlah);
+                    } else if (pilihMetode == 2){
+                        descendShell(data, jumlah);
+
+                    } else {cout << "Metode tidak tersedia"; break;}
+                    playGame(playMenu, start);
+                    
+                    break;
+                default:
+                    playGame(playMenu, start);
+                    break;
+                }
             break;
         case 2:
-            if (pilihMetode == 1){
-                ascendBubble_2(data, jumlah);
-            } else if (pilihMetode == 2){
-                descendBubble_2(data, jumlah);
-
-            } else {cout << "Metode tidak tersedia"; break;}
-            playGame(playMenu, start);
-            
+            /* code */
             break;
-        case 3:
-            if (pilihMetode == 1){
-                ascendBubble_3(data, jumlah);
-            } else if (pilihMetode == 2){
-                descendBubble_3(data, jumlah);
-
-            } else {cout << "Metode tidak tersedia"; break;}
-            playGame(playMenu, start);
-            
-            break;
-        case 4:
-            if (pilihMetode == 1){
-                ascendSelect(data, jumlah);
-            } else if (pilihMetode == 2){
-                descendSelect(data, jumlah);
-
-            } else {cout << "Metode tidak tersedia"; break;}
-            playGame(playMenu, start);
-            
-            break;
-        case 5:
-            if (pilihMetode == 1){
-                ascendInsert(data, jumlah);
-            } else if (pilihMetode == 2){
-                descendInsert(data, jumlah);
-
-            } else {cout << "Metode tidak tersedia"; break;}
-            playGame(playMenu, start);
-            
-            break;
-        case 6:
-            if (pilihMetode == 1){
-                ascendShell(data, jumlah);
-            } else if (pilihMetode == 2){
-                descendShell(data, jumlah);
-
-            } else {cout << "Metode tidak tersedia"; break;}
-            playGame(playMenu, start);
-            
-            break;
+        
         default:
+            cout << "Input tidak VALID!!\n"; 
             playGame(playMenu, start);
             break;
         }
@@ -406,8 +426,8 @@ void menuUtama(int& pilihanSorting, int& pilihMetode, larik& data, int &jumlah, 
 
 int main(){
     larik data;
-    int banyakData, pilihanSorting, pilihanMetode;
+    int banyakData, pilihanSorting, pilihanMetode, pilihMenu;
     bool play = true;
     char start;
-    menuUtama(pilihanSorting, pilihanMetode, data, banyakData, play, start);
+    menuUtama(pilihMenu, pilihanSorting, pilihanMetode, data, banyakData, play, start);
 }
