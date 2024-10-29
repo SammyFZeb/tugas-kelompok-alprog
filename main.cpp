@@ -1,9 +1,9 @@
 /*
-Nama Program    :Array (Sorting and Searching)
+Nama Program    :main.cpp (Sorting and Searching)
 Nama Anggota    :Sammy Farrel Zebua, Ibnaty Farah Rabbany, Joan Clarissa Halimin
 NPM             :140810240016, 140810240022, 140810240060
 Tanggal         :22 Oktober 2024
-Deskripsi       :Membuat program untuk sorting menggunakan metode bubble sort, selection sort, insertion sort dan shell sort.
+Deskripsi       :Membuat program untuk sorting dan searching string dengan berbagai metode.
 */
 
 #include <iostream>
